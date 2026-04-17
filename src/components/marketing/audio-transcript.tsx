@@ -268,22 +268,21 @@ function PhoneShell({ children }: { children: React.ReactNode }) {
     <div
       className="relative mx-auto flex flex-col overflow-hidden"
       style={{
-        width: 285,
-        aspectRatio: "393 / 852",
-        borderRadius: 44,
-        border: "2.5px solid rgba(255,255,255,0.10)",
+        width: 380,
+        aspectRatio: "1206 / 2622",
+        borderRadius: 38,
         background: "#000",
+        border: "6px solid #1a1a1d",
       }}
     >
       {/* Dynamic Island */}
-      <div className="relative z-10 flex justify-center pt-3 pb-1">
+      <div className="relative z-10 flex justify-center pt-2 pb-0.5">
         <div
           className="rounded-full"
           style={{
-            width: 96,
-            height: 28,
-            background: "#111",
-            border: "1px solid rgba(255,255,255,0.06)",
+            width: 80,
+            height: 22,
+            background: "#0a0a0a",
           }}
         />
       </div>
