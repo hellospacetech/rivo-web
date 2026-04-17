@@ -1,0 +1,460 @@
+{
+  "words": [
+    {
+      "word": "Rivo",
+      "start": 0.046,
+      "end": 0.499
+    },
+    {
+      "word": "keeps",
+      "start": 0.627,
+      "end": 0.929
+    },
+    {
+      "word": "track",
+      "start": 0.964,
+      "end": 1.265
+    },
+    {
+      "word": "of",
+      "start": 1.335,
+      "end": 1.393
+    },
+    {
+      "word": "the",
+      "start": 1.44,
+      "end": 1.509
+    },
+    {
+      "word": "markets",
+      "start": 1.556,
+      "end": 1.881
+    },
+    {
+      "word": "for",
+      "start": 1.927,
+      "end": 2.078
+    },
+    {
+      "word": "you.",
+      "start": 2.136,
+      "end": 2.403
+    },
+    {
+      "word": "Every",
+      "start": 2.728,
+      "end": 2.961
+    },
+    {
+      "word": "day,",
+      "start": 3.019,
+      "end": 3.506
+    },
+    {
+      "word": "we",
+      "start": 3.622,
+      "end": 3.773
+    },
+    {
+      "word": "analyze",
+      "start": 3.855,
+      "end": 4.296
+    },
+    {
+      "word": "economic",
+      "start": 4.331,
+      "end": 4.783
+    },
+    {
+      "word": "data,",
+      "start": 4.853,
+      "end": 5.283
+    },
+    {
+      "word": "market",
+      "start": 5.561,
+      "end": 5.886
+    },
+    {
+      "word": "movements,",
+      "start": 5.944,
+      "end": 6.641
+    },
+    {
+      "word": "and",
+      "start": 6.815,
+      "end": 7.117
+    },
+    {
+      "word": "financial",
+      "start": 7.21,
+      "end": 7.697
+    },
+    {
+      "word": "developments",
+      "start": 7.744,
+      "end": 8.301
+    },
+    {
+      "word": "from",
+      "start": 8.336,
+      "end": 8.487
+    },
+    {
+      "word": "around",
+      "start": 8.533,
+      "end": 8.8
+    },
+    {
+      "word": "the",
+      "start": 8.835,
+      "end": 8.905
+    },
+    {
+      "word": "world.",
+      "start": 8.951,
+      "end": 9.439
+    },
+    {
+      "word": "Then",
+      "start": 10.136,
+      "end": 10.31
+    },
+    {
+      "word": "we",
+      "start": 10.356,
+      "end": 10.437
+    },
+    {
+      "word": "turn",
+      "start": 10.495,
+      "end": 10.704
+    },
+    {
+      "word": "them",
+      "start": 10.751,
+      "end": 10.89
+    },
+    {
+      "word": "into",
+      "start": 10.983,
+      "end": 11.25
+    },
+    {
+      "word": "short,",
+      "start": 11.343,
+      "end": 11.656
+    },
+    {
+      "word": "clear",
+      "start": 11.691,
+      "end": 11.923
+    },
+    {
+      "word": "reports",
+      "start": 11.981,
+      "end": 12.423
+    },
+    {
+      "word": "in",
+      "start": 12.457,
+      "end": 12.516
+    },
+    {
+      "word": "a",
+      "start": 12.574,
+      "end": 12.597
+    },
+    {
+      "word": "language",
+      "start": 12.655,
+      "end": 13.038
+    },
+    {
+      "word": "you",
+      "start": 13.096,
+      "end": 13.224
+    },
+    {
+      "word": "understand.",
+      "start": 13.317,
+      "end": 14.036
+    },
+    {
+      "word": "But",
+      "start": 14.64,
+      "end": 14.803
+    },
+    {
+      "word": "everyone's",
+      "start": 14.849,
+      "end": 15.221
+    },
+    {
+      "word": "risk",
+      "start": 15.267,
+      "end": 15.476
+    },
+    {
+      "word": "perception",
+      "start": 15.534,
+      "end": 16.01
+    },
+    {
+      "word": "is",
+      "start": 16.068,
+      "end": 16.138
+    },
+    {
+      "word": "different.",
+      "start": 16.184,
+      "end": 16.718
+    },
+    {
+      "word": "What",
+      "start": 17.16,
+      "end": 17.334
+    },
+    {
+      "word": "matters",
+      "start": 17.38,
+      "end": 17.67
+    },
+    {
+      "word": "to",
+      "start": 17.705,
+      "end": 17.763
+    },
+    {
+      "word": "a",
+      "start": 17.833,
+      "end": 17.868
+    },
+    {
+      "word": "cautious",
+      "start": 17.914,
+      "end": 18.286
+    },
+    {
+      "word": "investor",
+      "start": 18.332,
+      "end": 18.785
+    },
+    {
+      "word": "might",
+      "start": 18.866,
+      "end": 19.075
+    },
+    {
+      "word": "be",
+      "start": 19.122,
+      "end": 19.226
+    },
+    {
+      "word": "ordinary",
+      "start": 19.296,
+      "end": 19.83
+    },
+    {
+      "word": "for",
+      "start": 19.9,
+      "end": 20.027
+    },
+    {
+      "word": "an",
+      "start": 20.062,
+      "end": 20.109
+    },
+    {
+      "word": "aggressive",
+      "start": 20.143,
+      "end": 20.561
+    },
+    {
+      "word": "one.",
+      "start": 20.608,
+      "end": 20.945
+    },
+    {
+      "word": "That's",
+      "start": 21.386,
+      "end": 21.688
+    },
+    {
+      "word": "why",
+      "start": 21.722,
+      "end": 21.827
+    },
+    {
+      "word": "in",
+      "start": 21.873,
+      "end": 21.931
+    },
+    {
+      "word": "the",
+      "start": 21.955,
+      "end": 22.024
+    },
+    {
+      "word": "next",
+      "start": 22.071,
+      "end": 22.233
+    },
+    {
+      "word": "step,",
+      "start": 22.268,
+      "end": 22.5
+    },
+    {
+      "word": "we'll",
+      "start": 22.523,
+      "end": 22.686
+    },
+    {
+      "word": "ask",
+      "start": 22.732,
+      "end": 22.883
+    },
+    {
+      "word": "you",
+      "start": 22.93,
+      "end": 23.011
+    },
+    {
+      "word": "a",
+      "start": 23.058,
+      "end": 23.081
+    },
+    {
+      "word": "few",
+      "start": 23.139,
+      "end": 23.278
+    },
+    {
+      "word": "questions.",
+      "start": 23.336,
+      "end": 24.044
+    },
+    {
+      "word": "Just",
+      "start": 24.996,
+      "end": 25.194
+    },
+    {
+      "word": "2",
+      "start": 25.24,
+      "end": 25.356
+    },
+    {
+      "word": "minutes.",
+      "start": 25.414,
+      "end": 25.925
+    },
+    {
+      "word": "Based",
+      "start": 26.436,
+      "end": 26.726
+    },
+    {
+      "word": "on",
+      "start": 26.761,
+      "end": 26.831
+    },
+    {
+      "word": "your",
+      "start": 26.877,
+      "end": 26.982
+    },
+    {
+      "word": "answers,",
+      "start": 27.04,
+      "end": 27.69
+    },
+    {
+      "word": "we'll",
+      "start": 27.864,
+      "end": 28.061
+    },
+    {
+      "word": "determine",
+      "start": 28.108,
+      "end": 28.468
+    },
+    {
+      "word": "your",
+      "start": 28.491,
+      "end": 28.595
+    },
+    {
+      "word": "investor",
+      "start": 28.63,
+      "end": 28.99
+    },
+    {
+      "word": "profile",
+      "start": 29.06,
+      "end": 29.791
+    },
+    {
+      "word": "and",
+      "start": 29.907,
+      "end": 30.105
+    },
+    {
+      "word": "personalize",
+      "start": 30.174,
+      "end": 30.708
+    },
+    {
+      "word": "your",
+      "start": 30.732,
+      "end": 30.848
+    },
+    {
+      "word": "reports,",
+      "start": 30.894,
+      "end": 31.382
+    },
+    {
+      "word": "news,",
+      "start": 31.463,
+      "end": 31.776
+    },
+    {
+      "word": "and",
+      "start": 31.8,
+      "end": 31.869
+    },
+    {
+      "word": "all",
+      "start": 31.916,
+      "end": 32.032
+    },
+    {
+      "word": "content",
+      "start": 32.101,
+      "end": 32.485
+    },
+    {
+      "word": "just",
+      "start": 32.519,
+      "end": 32.682
+    },
+    {
+      "word": "for",
+      "start": 32.717,
+      "end": 32.81
+    },
+    {
+      "word": "you.",
+      "start": 32.856,
+      "end": 33.146
+    },
+    {
+      "word": "Ready?",
+      "start": 33.588,
+      "end": 33.982
+    }
+  ],
+  "duration": 34.2
+}

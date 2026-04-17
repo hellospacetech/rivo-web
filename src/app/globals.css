@@ -1,26 +1,573 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ────────────────────────────────────────────────────────────────────────
+   Rivo, Marketing Design System
+   Sourcegraph-inspired: Source Serif 4 + Source Sans 3 + Source Code Pro.
+   Dark theme, red accent (#F34E3F), no shadows, flat design.
+   ──────────────────────────────────────────────────────────────────────── */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-source-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-source-serif), Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-source-code), ui-monospace, "SF Mono", Menlo, monospace;
+  --font-source-sans: var(--font-source-sans);
+  --font-source-serif: var(--font-source-serif);
+  --font-source-code: var(--font-source-code);
+
+  /* Accent color */
+  --color-accent: #F34E3F;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ──────────────────────────────────────────────────────────────────────
+   :root, global defaults
+   ────────────────────────────────────────────────────────────────────── */
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background: #08090a;
+  color: #d0d6e0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #08090a;
+  color: #d0d6e0;
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
+
+::selection {
+  background: rgba(255, 255, 255, 0.12);
+  color: #f7f8f8;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #08090a;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.06);
+  border: 3px solid #08090a;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+@media (pointer: coarse) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.4);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   .marketing-dark, token namespace
+   Verbatim from boost-your-app/apps/web/app/globals.css L236-281
+   ────────────────────────────────────────────────────────────────────── */
+.marketing-dark {
+  /* Background hierarchy */
+  --mkt-bg-primary: #08090a;
+  --mkt-bg-panel: #0f1011;
+  --mkt-bg-elevated: #121314;
+  --mkt-bg-level-3: #191a1b;
+  --mkt-bg-hover: rgba(255, 255, 255, 0.05);
+  --mkt-bg-hover-strong: rgba(255, 255, 255, 0.08);
+
+  /* Text hierarchy */
+  --mkt-text-primary: #f7f8f8;
+  --mkt-text-secondary: #d0d6e0;
+  --mkt-text-tertiary: #8a8f98;
+  --mkt-text-quaternary: #62666d;
+
+  /* Borders */
+  --mkt-border-subtle: #23252a;
+  --mkt-border-medium: #34343a;
+  --mkt-border-strong: #3e3e44;
+  --mkt-border-translucent: rgba(255, 255, 255, 0.08);
+  --mkt-border-translucent-weak: rgba(255, 255, 255, 0.05);
+
+  /* Typography */
+  --mkt-fw-medium: 510;
+  --mkt-fw-semibold: 590;
+
+  /* Easing */
+  --mkt-ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --mkt-ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Responsive page padding */
+  --mkt-page-padding: 77px;
+}
+
+@media (max-width: 1280px) {
+  .marketing-dark {
+    --mkt-page-padding: 46px;
+  }
+}
+@media (max-width: 1024px) {
+  .marketing-dark {
+    --mkt-page-padding: 28px;
+  }
+}
+@media (max-width: 768px) {
+  .marketing-dark {
+    --mkt-page-padding: 16px;
+  }
+}
+
+/* Flat design, globally banned shadows */
+.marketing-dark [class*="shadow-"] {
+  box-shadow: none !important;
+}
+
+/* Grid pattern utility */
+.marketing-dark .bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Keyframes
+   Verbatim from boost-your-app/apps/web/app/globals.css L1717-1805
+   ────────────────────────────────────────────────────────────────────── */
+@keyframes mkt-hero-word-reveal {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes mkt-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mkt-row-slide-in {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes mkt-insight-slide-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mkt-logos-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes mkt-dropdown-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes mkt-dropdown-scale-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes mkt-iso-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes mkt-line-shimmer {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+
+@keyframes mkt-notif-pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes mkt-dot-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 2px rgba(208, 214, 224, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 4px rgba(208, 214, 224, 0.6));
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Reduced motion (mandatory)
+   ────────────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .mkt-word-reveal,
+  .mkt-fade-in,
+  .mkt-logos-track,
+  .mkt-iso-float,
+  .mkt-line-shimmer {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  svg animate {
+    animation: none !important;
+  }
+  .mkt-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Marketing Linear Design System Utilities
+   Verbatim from boost-your-app/apps/web/app/globals.css L1422-1714.
+   NOT wrapped in @layer utilities, Tailwind v4 tree-shakes those.
+   These are plain CSS rules so they always ship.
+   ────────────────────────────────────────────────────────────────────── */
+
+  /* Typography tokens */
+  .mkt-title-hero {
+    font-weight: 450;
+    letter-spacing: -0.022em;
+    color: var(--mkt-text-primary);
+    text-wrap: balance;
+  }
+  .mkt-title-section {
+    font-weight: 450;
+    line-height: 1.08;
+    letter-spacing: -0.022em;
+    color: var(--mkt-text-primary);
+    text-wrap: balance;
+  }
+  .mkt-title-cta {
+    font-weight: 450;
+    line-height: 1;
+    letter-spacing: -0.022em;
+    color: var(--mkt-text-primary);
+    text-wrap: balance;
+  }
+  .mkt-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--mkt-text-tertiary);
+    text-wrap: pretty;
+  }
+  .mkt-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 510;
+    color: var(--mkt-text-quaternary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* Container */
+  .mkt-container {
+    max-width: 1436px;
+    margin: 0 auto;
+    padding-left: var(--mkt-page-padding, 77px);
+    padding-right: var(--mkt-page-padding, 77px);
+  }
+
+  /* Panel system (double-border demo panels) */
+  .mkt-panel-outer {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+  }
+  .mkt-panel-inner {
+    background: #090a0b;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    padding: 8px;
+    position: relative;
+  }
+  .mkt-panel-content {
+    background: #121314;
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+    border-radius: 7px;
+  }
+
+  /* Grain texture overlay */
+  .mkt-grain {
+    position: absolute;
+    inset: 1px 0 0 0;
+    opacity: 0.15;
+    pointer-events: none;
+    border-radius: inherit;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+  }
+
+  /* Interactive row hover */
+  .mkt-hover-row {
+    transition:
+      background 0.12s ease,
+      transform 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: default;
+    border-radius: 6px;
+  }
+  .mkt-hover-row:hover {
+    background: rgba(255, 255, 255, 0.03);
+    transform: translateX(2px);
+  }
+
+  /* Card lift hover */
+  .mkt-hover-lift {
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .mkt-hover-lift:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+  }
+
+  /* Scroll reveal */
+  .mkt-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+      transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .mkt-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Word reveal (hero stagger) */
+  .mkt-word-reveal {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(15%);
+    animation: mkt-hero-word-reveal 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    will-change: filter, transform, opacity;
+  }
+
+  /* Fade in up */
+  .mkt-fade-in {
+    opacity: 0;
+    animation: mkt-fade-in-up 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+
+  /* Logos marquee track */
+  .mkt-logos-track {
+    display: flex;
+    animation: mkt-logos-scroll 35s linear infinite;
+    width: max-content;
+  }
+  .mkt-logos-track:hover {
+    animation-play-state: paused;
+  }
+
+  /* Isometric float */
+  .mkt-iso-float {
+    animation: mkt-iso-float 5s ease-in-out infinite;
+  }
+
+  /* Nav item */
+  .mkt-nav-item {
+    font-size: 0.8125rem;
+    color: var(--mkt-text-primary);
+    font-weight: 400;
+    padding: 0 12px;
+    min-height: 44px;
+    border-radius: 4px;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      color 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      background-color 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .mkt-nav-item:hover,
+  .mkt-nav-item.active {
+    background: var(--mkt-bg-hover-strong);
+  }
+  .mkt-nav-item--dim {
+    color: var(--mkt-text-tertiary);
+  }
+  .mkt-nav-item--dim:hover {
+    color: var(--mkt-text-primary);
+    background: transparent;
+  }
+
+  /* Button: invert (Linear's primary CTA) */
+  .mkt-btn-invert {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 16px;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: var(--mkt-bg-primary);
+    background: #e6e6e6;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .mkt-btn-invert:hover {
+    background: #fff;
+  }
+
+  /* Header CTA: hide on small, show on sm+ */
+  .mkt-header-cta {
+    display: none !important;
+  }
+  @media (min-width: 640px) {
+    .mkt-header-cta {
+      display: inline-flex !important;
+    }
+  }
+
+  /* Button: secondary (outline CTA) */
+  .mkt-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    padding: 0 12px;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: var(--mkt-text-primary);
+    background: var(--mkt-bg-hover-strong);
+    border: 1px solid var(--mkt-border-strong);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .mkt-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  /* Generic panel hover */
+  .mkt-panel-hover {
+    background: transparent;
+    border: 1px solid var(--mkt-border-translucent);
+    transition: background 0.16s ease;
+  }
+  .mkt-panel-hover:hover {
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  /* Footer link */
+  .mkt-footer-link {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 19.5px;
+    letter-spacing: -0.01em;
+    color: var(--mkt-text-tertiary);
+    padding: 8px 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    transition: color 0.15s ease;
+  }
+  .mkt-footer-link:hover {
+    color: #f7f8f8;
+  }
+  .mkt-footer-col-title {
+    font-size: 0.8125rem;
+    font-weight: 510;
+    line-height: 19.5px;
+    letter-spacing: -0.01em;
+    color: var(--mkt-text-primary);
+    margin-bottom: 28px;
+  }
+  .mkt-footer-legal {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 19.5px;
+    color: var(--mkt-text-quaternary);
+    transition: color 0.15s ease;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 4px;
+  }
+  .mkt-footer-legal:hover {
+    color: #8a8f98;
+  }
+
+  /* Legal page content */
+  .legal-body {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--mkt-text-tertiary);
+  }
+  .legal-body ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .legal-body li {
+    padding-left: 0.25rem;
+  }
