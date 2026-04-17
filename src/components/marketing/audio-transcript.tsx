@@ -220,7 +220,19 @@ export function AudioTranscript() {
             <button type="button" onClick={skipBack} className="flex h-10 w-10 cursor-pointer items-center justify-center border-none bg-transparent" aria-label="Skip back">
               <SkipBackIcon />
             </button>
-            <button type="button" onClick={togglePlay} className="flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border-none transition-transform duration-150 hover:scale-105 active:scale-95" style={{ background: "#fff" }} aria-label={playing ? "Pause" : "Play"}>
+            <button
+              type="button"
+              onClick={togglePlay}
+              className="relative flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border-none transition-all duration-200 hover:scale-110 active:scale-95"
+              style={{ background: "#fff" }}
+              aria-label={playing ? "Pause" : "Play"}
+            >
+              {!playing && (
+                <span
+                  className="absolute inset-0 rounded-full animate-ping"
+                  style={{ background: "rgba(255,255,255,0.25)", animationDuration: "2s" }}
+                />
+              )}
               {playing ? <PauseIcon size={22} /> : <PlayIcon size={22} />}
             </button>
             <button type="button" onClick={skipForward} className="flex h-10 w-10 cursor-pointer items-center justify-center border-none bg-transparent" aria-label="Skip forward">
