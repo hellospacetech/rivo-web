@@ -268,16 +268,24 @@ function PhoneShell({ children }: { children: React.ReactNode }) {
     <div
       className="relative mx-auto flex flex-col overflow-hidden"
       style={{
-        width: 320,
-        height: 640,
-        borderRadius: 40,
-        border: "3px solid rgba(255,255,255,0.12)",
+        width: 285,
+        aspectRatio: "393 / 852",
+        borderRadius: 44,
+        border: "2.5px solid rgba(255,255,255,0.10)",
         background: "#000",
       }}
     >
-      {/* Notch */}
-      <div className="relative z-10 flex justify-center pt-2.5 pb-1">
-        <div className="h-[5px] w-[80px] rounded-full" style={{ background: "rgba(255,255,255,0.15)" }} />
+      {/* Dynamic Island */}
+      <div className="relative z-10 flex justify-center pt-3 pb-1">
+        <div
+          className="rounded-full"
+          style={{
+            width: 96,
+            height: 28,
+            background: "#111",
+            border: "1px solid rgba(255,255,255,0.06)",
+          }}
+        />
       </div>
       {children}
     </div>
