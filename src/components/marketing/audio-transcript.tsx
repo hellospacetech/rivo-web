@@ -278,13 +278,12 @@ export function AudioTranscript() {
 function PhoneShell({ children }: { children: React.ReactNode }) {
   return (
     <div
-      className="relative mx-auto flex flex-col overflow-hidden"
+      className="relative mx-auto flex w-[260px] flex-col overflow-hidden sm:w-[300px] md:w-[340px] lg:w-[380px]"
       style={{
-        width: 380,
         aspectRatio: "1206 / 2622",
-        borderRadius: 38,
+        borderRadius: "clamp(28px, 5vw, 38px)",
         background: "#000",
-        border: "6px solid #1a1a1d",
+        border: "clamp(4px, 0.5vw, 6px) solid #1a1a1d",
       }}
     >
       {/* Dynamic Island */}
@@ -292,8 +291,8 @@ function PhoneShell({ children }: { children: React.ReactNode }) {
         <div
           className="rounded-full"
           style={{
-            width: 80,
-            height: 22,
+            width: "clamp(56px, 7vw, 80px)",
+            height: "clamp(16px, 2vw, 22px)",
             background: "#0a0a0a",
           }}
         />
