@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { MarketingHeader } from "@/components/marketing/marketing-header";
 import { MarketingFooter } from "@/components/marketing/marketing-footer";
+import { JsonLd } from "@/components/seo/json-ld";
 import { BLOG_POSTS, getPostBySlug } from "@/lib/blog";
 
 export async function generateStaticParams() {
@@ -20,9 +21,32 @@ export async function generateMetadata({
   const post = getPostBySlug(slug.join("/"));
   if (!post) return {};
   const t = await getTranslations("blog");
+  const title = t(post.titleKey);
+  const description = t(post.descKey);
   return {
-    title: `${t(post.titleKey)} | Rivo`,
-    description: t(post.descKey),
+    title,
+    description,
+    openGraph: {
+      type: "article" as const,
+      title,
+      description,
+      publishedTime: post.date,
+      authors: ["Rivo"],
+      tags: [post.category],
+    },
+    twitter: {
+      card: "summary_large_image" as const,
+      title,
+      description,
+    },
+    alternates: {
+      canonical: `https://hellorivo.com/blog/${slug.join("/")}`,
+      languages: {
+        "x-default": `https://hellorivo.com/blog/${slug.join("/")}`,
+        en: `https://hellorivo.com/blog/${slug.join("/")}`,
+        tr: `https://hellorivo.com/tr/blog/${slug.join("/")}`,
+      },
+    },
   };
 }
 
@@ -37,8 +61,26 @@ export default async function BlogPost({
 
   const t = await getTranslations("blog");
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: t(post.titleKey),
+    description: t(post.descKey),
+    datePublished: post.date,
+    author: {
+      "@type": "Organization",
+      "@id": "https://hellorivo.com/#organization",
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": "https://hellorivo.com/#organization",
+    },
+    mainEntityOfPage: `https://hellorivo.com/blog/${slug.join("/")}`,
+  };
+
   return (
     <>
+      <JsonLd data={articleJsonLd} />
       <MarketingHeader />
       <main className="mkt-container pt-32 pb-20 lg:pt-40 lg:pb-28">
         <article className="mx-auto max-w-[720px]">

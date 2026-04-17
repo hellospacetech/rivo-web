@@ -5,9 +5,22 @@ import { MarketingHeader } from "@/components/marketing/marketing-header";
 import { MarketingFooter } from "@/components/marketing/marketing-footer";
 
 export const metadata: Metadata = {
-  title: "Risk Profiles | Rivo",
+  title: "Risk Profiles",
   description:
     "Same market day, three different briefs. Pick the lens that matches how you invest.",
+  openGraph: {
+    title: "Risk Profiles - Rivo",
+    description:
+      "Same market day, three different briefs. Pick the lens that matches how you invest.",
+  },
+  alternates: {
+    canonical: "https://hellorivo.com/profiles",
+    languages: {
+      "x-default": "https://hellorivo.com/profiles",
+      en: "https://hellorivo.com/profiles",
+      tr: "https://hellorivo.com/tr/profiles",
+    },
+  },
 };
 
 const PROFILES = [

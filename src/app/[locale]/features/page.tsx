@@ -5,9 +5,22 @@ import { MarketingHeader } from "@/components/marketing/marketing-header";
 import { MarketingFooter } from "@/components/marketing/marketing-footer";
 
 export const metadata: Metadata = {
-  title: "Features | Rivo",
+  title: "Features",
   description:
     "Everything Rivo does to replace your morning news routine with one calm listen.",
+  openGraph: {
+    title: "Features - Rivo",
+    description:
+      "Everything Rivo does to replace your morning news routine with one calm listen.",
+  },
+  alternates: {
+    canonical: "https://hellorivo.com/features",
+    languages: {
+      "x-default": "https://hellorivo.com/features",
+      en: "https://hellorivo.com/features",
+      tr: "https://hellorivo.com/tr/features",
+    },
+  },
 };
 
 export default async function FeaturesPage() {

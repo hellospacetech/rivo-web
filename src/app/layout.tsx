@@ -25,9 +25,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html className={`${inter.variable} ${geistMono.variable} h-full`}>
-      <body className="marketing-dark min-h-full">{children}</body>
-    </html>
-  );
+  return children;
 }
